@@ -70,9 +70,7 @@ cp install_isolated/share/cartographer_ros/launch/assets_writer_backpack_3d.laun
 
 ***温馨提示：请大家在接下来的操作中做好备份，以防文件丢失。*** 
 
-***默认大家的 Cartographer 的工作空间为 catkin_ws*** 
-
-***默认大家所使用的雷达为 lsn10，雷达的功能包为 lsn10*** 
+***文章中使用的`建图源码`都在[这里](https://github.com/typical-motion/Cartographer-ROS)。***
 
 ### 2D 建图 + 激光雷达
 
@@ -398,7 +396,7 @@ cp install_isolated/share/cartographer_ros/launch/demo_revo_lds.launch install_i
 
 **4. 创建陀螺仪的节点文件**
 
-你需要有一份**陀螺仪节点文件**，并且添加 `map` 与 `base_link` 的 tf 关系，`base_link` 与 `imu_link` 的 tf 关系，`base_link` 与 `laser`的 tf 关系。
+你需要有一份[**陀螺仪节点文件**](https://github.com/typical-motion/Cartographer-ROS/tree/main/imu)，并且添加 `map` 与 `base_link` 的 tf 关系，`base_link` 与 `imu_link` 的 tf 关系，`base_link` 与 `laser`的 tf 关系。
 
 然后像上述<a href="#lable">**合并雷达的功能包与 Cartographer ROS**</a> 合并陀螺仪功能与 Cartographer ROS 即可。
 
@@ -508,6 +506,13 @@ rosrun cartographer_ros cartographer_pbstream_to_ros_map \
 ```
 
 运行脚本文件即可保存地图。
+
+
+## 机器人导航
+
+创建好的地图可以通过 `map_server` 添加，用于机器人的导航。
+
+你可以在[这里](https://github.com/typical-motion/Sentinel_Navgation)找到`导航源码`。
 
 ## ***To Be Continued!!!***
 
